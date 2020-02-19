@@ -8,7 +8,7 @@ import random
 import configparser
 
 if os.environ.get('DEV'):
-    engine = create_engine('sqlite:///vpn_wifi.db', echo=True)
+    engine = create_engine('sqlite:///test.db', echo=True)
     Base = declarative_base()
 else:
     Config = configparser.ConfigParser()
