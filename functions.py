@@ -25,7 +25,6 @@ class User(Base):
     vpn_id = Column(Integer, primary_key=True)
     vpn_username = Column(String(255), nullable=False, unique=True, default = 'pass')
     pass_hash = Column(String(20), nullable=False, default = 0)
-    staffpass_id = Column(Integer, nullable=True, unique=True, default=null())
     pin = Column(String(255), nullable=True, default=null())
     one_time_code = Column(String(21), nullable=True, default = 0)
     primary = PrimaryKeyConstraint('vpn_id', name = "id_idx")
