@@ -26,6 +26,7 @@ class User(Base):
     vpn_username = Column(String(255), nullable=False, unique=True, default = 'pass')
     pass_hash = Column(String(20), nullable=False, default = 0)
     pin = Column(String(255), nullable=True, default=null())
+    skip_2fa = Column(Integer, nullable=False, default=0)
     one_time_code = Column(String(21), nullable=True, default = 0)
     primary = PrimaryKeyConstraint('vpn_id', name = "id_idx")
     def __repr__(self):
