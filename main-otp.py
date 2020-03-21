@@ -3,6 +3,7 @@
 from sqlalchemy.orm import sessionmaker
 from functions import *
 import argparse, sys, pyotp
+import sys
 
 
 parser = argparse.ArgumentParser(add_help=True)
@@ -67,7 +68,10 @@ else:
 
             if hotp.verify(code):
                 print("Auth-Type = Accept\n")
+                sys.exit(0)
             else:
                 print("Auth-Type = Denied\n")
+                sys.exit(1)
     else:
         print("Auth-Type = Accept\n")
+        sys.exit(0)
